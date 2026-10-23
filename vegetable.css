@@ -1,0 +1,273 @@
+﻿/* ===== Color / Typography System ===== */
+:root {
+    --primary: #778A50;
+    --background: #EDF2C5;
+    --content-text: #7D7D7D;
+    --content-bg: #F7FBDA;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Noto Sans", "Microsoft JhengHei", sans-serif;
+    font-size: 14px;
+    background: var(--background);
+    color: var(--content-text);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Head1 44px Black / Head2 16px Bold / Text1 14px / Text2 12px (line-height 150%) */
+.head1 {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.head2 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.text2 {
+    font-size: 12px;
+    line-height: 150%;
+}
+
+/* ===== Layout ===== */
+.container {
+    width: 1120px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* ===== Header ===== */
+header {
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 123px;
+    padding-bottom: 0;
+}
+
+.logo {
+    color: var(--primary);
+}
+
+.header-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .header-tools img {
+        width: 24px;
+        height: 24px;
+    }
+
+.divider {
+    width: 1px;
+    height: 20px;
+    background: var(--primary);
+    opacity: .5;
+    margin: 0 4px;
+}
+
+.btn-outline {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 3px;
+    padding: 2px 8px;
+    line-height: 150%;
+}
+
+/* ===== Nav ===== */
+nav {
+    background: var(--primary);
+    height: 43px;
+    border-radius: 4px 4px 0 0;
+}
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        height: 100%;
+        padding-left: 30px;
+    }
+
+    nav a {
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+/* ===== Banner ===== */
+.banner img {
+    width: 100%;
+    height: 236px;
+    object-fit: cover;
+}
+
+/* ===== Main ===== */
+main {
+    display: flex;
+    gap: 64px;
+    margin-top: 20px;
+}
+
+.column {
+    width: 528px;
+    flex: none;
+}
+
+.section-title {
+    background: var(--primary);
+    color: var(--white);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+/* Vegetables cards */
+.cards {
+    display: flex;
+    gap: 16px;
+}
+
+.card {
+    width: 164px;
+    height: 444px;
+    background: var(--content-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+    .card img {
+        width: 100%;
+        height: 142px;
+        object-fit: cover;
+    }
+
+.card-text {
+    flex: 1;
+    overflow-y: auto; /* 文字太長時在卡片內捲動 */
+    padding: 12px 10px;
+    color: var(--content-text);
+}
+
+/* Contact */
+.contact-box {
+    background: var(--content-bg);
+    height: 444px;
+    padding: 16px;
+}
+
+    .contact-box p {
+        margin-bottom: 8px;
+    }
+
+    .contact-box hr {
+        border: 0;
+        border-top: 1px solid var(--content-text);
+        margin: 8px 0;
+    }
+
+/* ===== Footer ===== */
+footer {
+    background: var(--primary);
+    color: var(--white);
+    height: 62px;
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+/* ===== RWD ===== */
+@media (max-width: 1160px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    main {
+        gap: 24px;
+    }
+
+    .column {
+        width: calc(50% - 12px);
+    }
+
+    .card {
+        width: calc((100% - 32px) / 3);
+    }
+}
+
+@media (max-width: 768px) {
+    .head1 {
+        font-size: 32px;
+    }
+
+    header {
+        height: auto;
+        padding: 20px 20px 16px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav ul {
+        gap: 20px;
+        padding-left: 16px;
+        overflow-x: auto;
+    }
+
+    .banner img {
+        height: 160px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .card {
+        height: auto;
+    }
+
+    .card-text {
+        overflow: visible;
+    }
+
+    .contact-box {
+        height: auto;
+        min-height: 200px;
+    }
+}
